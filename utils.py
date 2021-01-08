@@ -725,7 +725,7 @@ def int2onehot(labels, num_classes):
     batch_size = labels.shape[0]
     onehot_labels = torch.zeros(batch_size, num_classes).cuda()
     idx = torch.arange(batch_size)
-    onehot_labels[idx, labels] = 1
+    onehot_labels[idx, labels] = 1#[idx, labels]中的idx和labels其实都是位置索引来的，位置不止一个
     return onehot_labels
 
 
